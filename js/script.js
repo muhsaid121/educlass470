@@ -24,3 +24,17 @@ document.addEventListener("click", function (e) {
     searchForm.classList.remove("active");
   }
 });
+//Desription box
+const itemDetailDescription = document.querySelector(
+  "#item-detail-description"
+);
+const itemDetailButton = document.querySelector(".item-detail-button");
+itemDetailButton.onclick = (e) => {
+  itemDetailDescription.style.display = "flex";
+  e.preventDefault();
+};
+//klik tombol close
+document.querySelector(".description .close-icon").onclick = (e) => {
+  itemDetailDescription.style.display = "none";
+  e.preventDefault();
+};

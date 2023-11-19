@@ -213,6 +213,13 @@ body {
 .menu .row .menu-card .menu-card-title {
   margin: 1rem auto 0.5rem;
 }
+.menu .menu-card-title a {
+  color: white;
+  font-size: large;
+}
+.menu .menu-card-title a:hover {
+  color: var(--primary);
+}
 /* Profile */
 
 .profiles .row {
@@ -266,7 +273,7 @@ body {
   text-align: justify;
 }
 .profiles .row .profile-desc h3 {
-  font-size: medium;
+  font-size: 1.3rem;
   margin-bottom: 1rem;
 }
 .profiles .row .profile-desc p {
@@ -386,6 +393,73 @@ hr {
   text-align: center;
 }
 
+/*descriptrion box*/
+.description {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(1, 1, 1, 0.7);
+}
+.description-container {
+  position: relative;
+  background-color: #fefefe;
+  color: var(--bg);
+  margin: 15% auto;
+  padding: 1.2rem;
+  border: 1px solid #666;
+  width: 80%;
+  height: fit-content;
+  animation: animateDescription 0.5s;
+}
+/*description animasi*/
+@keyframes animateDescription {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+.description-container .close-icon {
+  position: absolute;
+  right: 1rem;
+}
+.description-content {
+  display: flex;
+  flex-wrap: nowrap;
+}
+.description-content img {
+  height: 15rem;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+}
+.description-content p {
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  margin-top: 1.2rem;
+}
+.description .detail-content h3 {
+  font-size: medium;
+  margin-bottom: 1rem;
+}
+.description .detail-content p {
+  font-size: 1.3rem;
+  font-weight: 300;
+  line-height: 1.6;
+  text-align: justify;
+}
+.description .detail-content p span {
+  font-weight: bold;
+  color: rgb(56, 86, 86);
+}
 /* Media Queries */
 /* Laptop */
 @media (max-width: 1366px) {
@@ -437,6 +511,9 @@ hr {
   }
   footer .social-icons .size-25 {
     width: 15px;
+  }
+  .description-content {
+    flex-wrap: wrap;
   }
 }
 /* Mobile phone */
